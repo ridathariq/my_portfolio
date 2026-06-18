@@ -1,0 +1,513 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #1a1a1a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #0066ff;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+#navMenu {
+    display: flex !important;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 60px 10%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #dce9f9 100%);
+}
+
+.hero div {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.hero h2 {
+    font-size: 28px;
+    color: #0066ff;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    background: #1a1a1a;
+    color: white;
+    padding: 14px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #0066ff;
+    transform: translateY(-2px);
+}
+
+.hero img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Sections */
+section {
+    padding: 60px 10%;
+}
+
+section h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+/* About Section */
+.about-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about-box img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-box p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* Card */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.card p {
+    color: #666;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skills span {
+    background: #1a1a1a;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.skills span:hover {
+    background: #0066ff;
+    transform: translateY(-2px);
+}
+
+/* Container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Project & Certificate Cards */
+.project-card,
+.certificate-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+}
+
+.project-card:hover,
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.project-card img,
+.certificate-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background: #f5f7fa;
+
+    
+}
+
+.project-card h3,
+.certificate-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 15px;
+}
+
+.project-card p,
+.certificate-card p {
+    color: #666;
+    font-size: 16px;
+    margin: 0 15px 12px;
+}
+
+.project-card a {
+    display: inline-block;
+    color: #0066ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 15px 15px;
+    transition: color 0.3s;
+}
+
+.project-card a:hover {
+    color: #1a1a1a;
+}
+
+/* Volunteer Cards */
+.volunteer-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+}
+
+.volunteer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.volunteer-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.volunteer-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 15px;
+}
+
+.volunteer-card .organization {
+    color: #0066ff;
+    font-size: 16px;
+    margin: 0 15px 8px;
+}
+
+.volunteer-card .duration {
+    color: #999;
+    font-size: 15px;
+    margin: 0 15px 12px;
+    font-style: italic;
+}
+
+.volunteer-card .description {
+    color: #666;
+    font-size: 16px;
+    margin: 0 15px 15px;
+    line-height: 1.6;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+#contact p {
+    color: #666;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contact-links a {
+    color: #0066ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: #1a1a1a;
+}
+
+/* Experience Section */
+
+.experience-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+}
+
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+.experience-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+
+.experience-card .company {
+    color: #0066ff;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+
+.experience-card .duration {
+    color: #999;
+    font-size: 15px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+
+.experience-card .description {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    #navMenu {
+        display: none !important;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #1a1a1a;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    #navMenu.active {
+        display: flex !important;
+    }
+
+    #navMenu li {
+        text-align: center;
+    }
+
+    #navMenu a {
+        display: block;
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    nav h2 {
+        font-size: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 5%;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero img {
+        width: 250px;
+        height: 250px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    section h1 {
+        font-size: 30px;
+    }
+
+    .about-box {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .about-box img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
